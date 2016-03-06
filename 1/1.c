@@ -76,6 +76,25 @@ michelle(int *nums, int nums_size, int target)
     return indices;
 }
 
+int*
+iterative(int *nums, int nums_size, int target)
+{
+    int *indices = (int*)malloc(sizeof(int) * 2);
+    for (int i = 0; i < nums_size; i++)
+    {
+        for (int j = nums_size - 1; j > i; j--)
+        {
+            if (nums[i] + nums[j] == target)
+            {
+                indices[0] = i;
+                indices[1] = j;
+                return indices;
+            }
+        }
+    }
+    return NULL;
+}
+
 void main()
 {
     int nums[8] = { 2,1,9,4,4,56,90,3 };

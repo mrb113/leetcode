@@ -1,6 +1,5 @@
 int strStr(char* haystack, char* needle)
 {
-    int retval = 0;
     if(strlen(needle) == 0)
     {
         return 0;
